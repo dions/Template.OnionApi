@@ -6,6 +6,8 @@ namespace Example.Domain.Models
     {
         public Customer(int id) => Id = id;
 
-        public string? CustomerName { get; set; }
+        public string? Name { get; set; }
+
+        public string? Email { get; set; }
     }
 }

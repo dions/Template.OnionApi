@@ -4,7 +4,7 @@ using Example.Domain.Models;
 
 namespace Example.Data.Repositories
 {
-    public class CustomerRepository : RepositoryBase<Customer>
+    public class CustomerRepository : RepositoryBase<Customer>, ICustomerRepository
     {
 
     }

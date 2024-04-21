@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Example.Domain.Models;
 
 namespace Template.Service.Interfaces
 {
     public interface ICustomerService
     {
+        Customer Get(int id);
     }
 }
