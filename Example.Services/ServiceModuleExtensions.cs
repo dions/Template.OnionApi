@@ -11,6 +11,8 @@ namespace Example.Service
         {
             services.TryAddScoped<ICustomerService, CustomerService>();
 
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ServiceModuleExtensions).Assembly));
+
             // Do additional service initialization
             return services;
         }

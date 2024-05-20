@@ -1,5 +1,4 @@
-﻿using Example.Domain.Models;
-using Example.Service.Queries;
+﻿using Example.Service.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,18 +15,24 @@ namespace Example.WebApi.Controllers
 
         private IMediator _mediator;
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet(Name = "GetAllProducts")]
-        public async Task<IActionResult> GetAllProducts()
+        public async Task<IResult> GetAllProducts()
         {
             var command = new GetAllProductsQuery();
             var response = await _mediator.Send(command);
-            return (IActionResult)(response is not null ? Results.Ok(response) : Results.NotFound());
+            return (IResult)(response is not null ? Results.Ok(response) : Results.NotFound());
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}", Name = "GetProductById")]
-        public Customer GetProductById(int id)
+        public async Task<IResult> GetProductById(int id)
         {
-            return new Customer(id);
+            var command = new GetProductByIdQuery(id);
+            var response = await _mediator.Send(command);
+            return (IResult)(response is not null ? Results.Ok(response) : Results.NotFound());
         }
     }
 }
