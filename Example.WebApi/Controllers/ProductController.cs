@@ -1,4 +1,6 @@
-﻿using Example.Service.Queries;
+﻿using Example.Domain.Models;
+using Example.Service.Commands;
+using Example.Service.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +35,29 @@ namespace Example.WebApi.Controllers
             var command = new GetProductByIdQuery(id);
             var response = await _mediator.Send(command);
             return (IResult)(response is not null ? Results.Ok(response) : Results.NotFound());
+        }
+
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpPost(Name = "CreateProduct")]
+        public async Task<IResult> CreateProduct(Product product)
+        {
+            try
+            {
+                var command = new CreateProductCommand()
+                {
+                    Name = product.Name,
+                    Description = product.Description,
+                    Category = product.Category,
+                    Price = product.Price,
+                    Active = product.Active,
+                };
+                var response = await _mediator.Send(command);
+                return response is not null ? Results.Ok(response) : Results.NotFound();
+            }
+            catch (Exception ex)
+            {
+                return Results.BadRequest(ex.Message);
+            }
         }
     }
 }
