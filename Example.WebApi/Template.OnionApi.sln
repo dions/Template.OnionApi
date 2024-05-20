@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Service", "..\Examp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.WebApi", "Example.WebApi.csproj", "{1E07652D-5E72-4898-884A-336B2C7BD801}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.ProductData", "..\Example.ProductData\Example.ProductData.csproj", "{443586FF-1F48-4652-BA90-58592406496D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1E07652D-5E72-4898-884A-336B2C7BD801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E07652D-5E72-4898-884A-336B2C7BD801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E07652D-5E72-4898-884A-336B2C7BD801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443586FF-1F48-4652-BA90-58592406496D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443586FF-1F48-4652-BA90-58592406496D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443586FF-1F48-4652-BA90-58592406496D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443586FF-1F48-4652-BA90-58592406496D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
